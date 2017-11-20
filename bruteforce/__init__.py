@@ -14,4 +14,8 @@ weighted_attributes = Calculations.getWeightedAttributeMatrix(house_matrix , wei
 
 sum = weighted_attributes.sum(axis=1)
 
-print(sum.argsort()[:10])
+get_top_decisions = Calculations.getindexesdecending(sum, 10)
+print(get_top_decisions)
+
+get_top_crieterias = Calculations.getindexesdecending(weights,5)
+print(get_top_crieterias)
