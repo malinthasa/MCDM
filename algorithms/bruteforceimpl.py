@@ -59,5 +59,7 @@ for iterator in range(0,number_of_iterations):
 
 # Visualization
 plt.plot(results)
+plt.xlabel('Iteration')
+plt.ylabel('Performance %')
 plt.show()
 
