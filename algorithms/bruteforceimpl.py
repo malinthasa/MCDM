@@ -22,7 +22,7 @@ df = datareading.read_data(os.path.join(os.path.split(__file__)[0], "../resource
 # Pre-processing data
 normalized_df = datapreprocess.normalize_data(df)
 processed_df = datapreprocess.adjust_for_weights(normalized_df)
-processed_df.insert(5, 'ID', range(0, len(df)))
+processed_df.insert(5, 'id', range(0, len(df)))
 
 # normalized house matrix
 house_matrix = calculations.get_matrix(processed_df)
