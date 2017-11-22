@@ -4,8 +4,8 @@ from sklearn import preprocessing
 
 def normalize_data(house_data_frame):
     x = house_data_frame.values
-    min_max_scaler = preprocessing.MinMaxScaler()
-    x_scaled = min_max_scaler.fit_transform(x)
+    min_max_scalar = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scalar.fit_transform(x)
     return pd.DataFrame(x_scaled)
 
 
