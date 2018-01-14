@@ -4,6 +4,7 @@ import calculations
 import numpy as np
 import os.path
 import matplotlib.pyplot as plt
+from __future__ import division
 
 for iteration in xrange(10, 80, 5):
 
@@ -69,7 +70,7 @@ for iteration in xrange(10, 80, 5):
 
         # Performance calculation
         number_of_correct_decisions = np.sum(np.in1d(constructed_house_matrix[:,5], get_top_decisions) == True)
-        performance = number_of_correct_decisions * 10
+        performance = number_of_correct_decisions / 100 * iteration
         results[iterator] = performance
         reporting[iterator][5] = performance;
 
