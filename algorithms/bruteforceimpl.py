@@ -1,10 +1,10 @@
+from __future__ import division
 import datareading
 import datapreprocess
 import calculations
 import numpy as np
 import os.path
 import matplotlib.pyplot as plt
-from __future__ import division
 
 for iteration in xrange(10, 80, 5):
 
