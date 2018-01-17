@@ -6,6 +6,7 @@ import numpy as np
 import os.path
 import matplotlib.pyplot as plt
 
+# Changing number of decisions
 for iteration in xrange(10, 80, 5):
 
     filtering_combinations = np.asarray(list(calculations.generate_all_combinations(5,100 - iteration)))
@@ -72,7 +73,7 @@ for iteration in xrange(10, 80, 5):
         number_of_correct_decisions = np.sum(np.in1d(constructed_house_matrix[:,5], get_top_decisions) == True)
         performance = number_of_correct_decisions * 100.0 / iteration
         results[iterator] = performance
-        # TODO replace this magic number 6 with the length of the weights array
+        # TODO replace this magic number 5 with the length of the weights array
         plt.xlabel('Iteration')
         np.put(reporting[iterator], 5, performance)
 
