@@ -70,13 +70,16 @@ for iteration in xrange(10, 80, 5):
 
         # Performance calculation
         number_of_correct_decisions = np.sum(np.in1d(constructed_house_matrix[:,5], get_top_decisions) == True)
-        performance = number_of_correct_decisions / 100 * iteration
+        performance = number_of_correct_decisions * 100.0 / iteration
         results[iterator] = performance
-        reporting[iterator][5] = performance;
+        # TODO replace this magic number 6 with the length of the weights array
+        plt.xlabel('Iteration')
+        np.put(reporting[iterator], 5, performance)
 
     # Visualization
     plt.plot(results)
     plt.xlabel('Iteration')
     plt.ylabel('Performance %')
     plt.savefig('performance' + str(iteration)+'.png')
+    plt.close()
     np.savetxt("results" + str(iteration) +".csv", reporting, delimiter=",",fmt='%f')
